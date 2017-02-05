@@ -3,10 +3,6 @@ package com.hakim.data.calc.reconciliation
 import akka.actor._
 
 
-/**
-  * 浦发账的对账员
-  * @author
-  */
 //回款流水对账行为
 case class BackSectionFlowReconciliation(date: String)
 case class BackSectionFlowReconciliationResponse(date: String,isSuccess:Boolean)
@@ -16,9 +12,9 @@ case class WithdrawFlowReconciliationResponse(date: String,isSuccess:Boolean)
 
 case object EmptyRequest
 
-
 /**
-  * This is the actor that handles the request messages.
+  * 浦发账的对账员
+  * @author
   */
 class SpdRer extends Actor with ActorLogging {
   val system = context.system
@@ -33,7 +29,6 @@ class SpdRer extends Actor with ActorLogging {
       }else{
         sender() ! BackSectionFlowReconciliationResponse(date,false);
       }
-      context.stop(self)
 
     case WithdrawFlowReconciliation(date) =>
       if (date.trim.nonEmpty) {
@@ -42,9 +37,8 @@ class SpdRer extends Actor with ActorLogging {
       }else{
         sender() ! WithdrawFlowReconciliationResponse(date,false);
       }
-      context.stop(self)
     case _ =>
-      context.stop(self)
+      //DO NOTHING
   }
 
 }

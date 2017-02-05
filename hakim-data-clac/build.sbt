@@ -26,6 +26,9 @@ libraryDependencies ++= Seq(
   "org.squbs" %% "squbs-actormonitor" % squbsV,
   "org.squbs" %% "squbs-httpclient" % squbsV,
   "org.squbs" %% "squbs-admin" % squbsV,
+  "com.typesafe.slick" %% "slick" % "3.1.1",
+  "org.slf4j" % "slf4j-nop" % "1.6.4",
+  "mysql" % "mysql-connector-java" % "5.1.6",
   "org.squbs" %% "squbs-testkit" % squbsV % "test",
   "io.spray" %% "spray-testkit" % "1.3.3" % "test"
 )
