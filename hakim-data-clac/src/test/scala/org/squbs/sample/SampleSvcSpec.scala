@@ -1,6 +1,7 @@
 package org.squbs.sample
 
 import akka.actor.{Actor, Props}
+import com.hakim.data.calc.SampleHttpSvc
 import org.scalatest.{FlatSpecLike, Matchers}
 import org.squbs.httpclient.json.Json4sJacksonNoTypeHintsProtocol
 import org.squbs.testkit.TestRoute
